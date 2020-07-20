@@ -1,0 +1,70 @@
+\* 4_DCs_e_5_PTTs *\
+Minimize
+Custo: 100 X_DC_1_PTT_1 + 150 X_DC_1_PTT_2 + 225 X_DC_1_PTT_3
+ + 225 X_DC_1_PTT_4 + 225 X_DC_1_PTT_5 + 100 X_DC_2_PTT_1 + 150 X_DC_2_PTT_2
+ + 225 X_DC_2_PTT_3 + 225 X_DC_2_PTT_4 + 225 X_DC_2_PTT_5 + 100 X_DC_3_PTT_1
+ + 150 X_DC_3_PTT_2 + 225 X_DC_3_PTT_3 + 225 X_DC_3_PTT_4 + 225 X_DC_3_PTT_5
+ + 100 X_DC_4_PTT_1 + 150 X_DC_4_PTT_2 + 225 X_DC_4_PTT_3 + 225 X_DC_4_PTT_4
+ + 225 X_DC_4_PTT_5
+Subject To
+Capacidade_PTT_1: X_DC_1_PTT_1 + X_DC_2_PTT_1 + X_DC_3_PTT_1 + X_DC_4_PTT_1
+ <= 10000
+Capacidade_PTT_2: X_DC_1_PTT_2 + X_DC_2_PTT_2 + X_DC_3_PTT_2 + X_DC_4_PTT_2
+ <= 15000
+Capacidade_PTT_3: X_DC_1_PTT_3 + X_DC_2_PTT_3 + X_DC_3_PTT_3 + X_DC_4_PTT_3
+ <= 21000
+Capacidade_PTT_4: X_DC_1_PTT_4 + X_DC_2_PTT_4 + X_DC_3_PTT_4 + X_DC_4_PTT_4
+ <= 21000
+Capacidade_PTT_5: X_DC_1_PTT_5 + X_DC_2_PTT_5 + X_DC_3_PTT_5 + X_DC_4_PTT_5
+ <= 21000
+Trafego_DC_1: X_DC_1_PTT_1 + X_DC_1_PTT_2 + X_DC_1_PTT_3 + X_DC_1_PTT_4
+ + X_DC_1_PTT_5 = 16000
+Trafego_DC_2: X_DC_2_PTT_1 + X_DC_2_PTT_2 + X_DC_2_PTT_3 + X_DC_2_PTT_4
+ + X_DC_2_PTT_5 = 12000
+Trafego_DC_3: X_DC_3_PTT_1 + X_DC_3_PTT_2 + X_DC_3_PTT_3 + X_DC_3_PTT_4
+ + X_DC_3_PTT_5 = 12000
+Trafego_DC_4: X_DC_4_PTT_1 + X_DC_4_PTT_2 + X_DC_4_PTT_3 + X_DC_4_PTT_4
+ + X_DC_4_PTT_5 = 12000
+Bounds
+0 <= X_DC_1_PTT_1
+0 <= X_DC_1_PTT_2
+0 <= X_DC_1_PTT_3
+0 <= X_DC_1_PTT_4
+0 <= X_DC_1_PTT_5
+0 <= X_DC_2_PTT_1
+0 <= X_DC_2_PTT_2
+0 <= X_DC_2_PTT_3
+0 <= X_DC_2_PTT_4
+0 <= X_DC_2_PTT_5
+0 <= X_DC_3_PTT_1
+0 <= X_DC_3_PTT_2
+0 <= X_DC_3_PTT_3
+0 <= X_DC_3_PTT_4
+0 <= X_DC_3_PTT_5
+0 <= X_DC_4_PTT_1
+0 <= X_DC_4_PTT_2
+0 <= X_DC_4_PTT_3
+0 <= X_DC_4_PTT_4
+0 <= X_DC_4_PTT_5
+Generals
+X_DC_1_PTT_1
+X_DC_1_PTT_2
+X_DC_1_PTT_3
+X_DC_1_PTT_4
+X_DC_1_PTT_5
+X_DC_2_PTT_1
+X_DC_2_PTT_2
+X_DC_2_PTT_3
+X_DC_2_PTT_4
+X_DC_2_PTT_5
+X_DC_3_PTT_1
+X_DC_3_PTT_2
+X_DC_3_PTT_3
+X_DC_3_PTT_4
+X_DC_3_PTT_5
+X_DC_4_PTT_1
+X_DC_4_PTT_2
+X_DC_4_PTT_3
+X_DC_4_PTT_4
+X_DC_4_PTT_5
+End
