@@ -11,6 +11,9 @@ Restricao_1PPTporDC_DC_2: X_DC_2_PTT_1 + X_DC_2_PTT_2 + X_DC_2_PTT_3 = 1
 Variavel_ativacao_PTT_PTT_1: - X_DC_1_PTT_1 - X_DC_2_PTT_1 + Y_PTT_1 >= 0
 Variavel_ativacao_PTT_PTT_2: - X_DC_1_PTT_2 - X_DC_2_PTT_2 + Y_PTT_2 >= 0
 Variavel_ativacao_PTT_PTT_3: - X_DC_1_PTT_3 - X_DC_2_PTT_3 + Y_PTT_3 >= 0
+restricao_valor_total: 100 X_DC_1_PTT_1 + 150 X_DC_1_PTT_2 + 225 X_DC_1_PTT_3
+ + 125 X_DC_2_PTT_1 + 100 X_DC_2_PTT_2 + 225 X_DC_2_PTT_3 + 2000 Y_PTT_1
+ + 4000 Y_PTT_2 + 6000 Y_PTT_3 <= 50000
 restricoes_atrasos_DC_1_PTT_1: 5 X_DC_1_PTT_1 <= 5
 restricoes_atrasos_DC_1_PTT_2: 15 X_DC_1_PTT_2 <= 15
 restricoes_atrasos_DC_1_PTT_3: 10 X_DC_1_PTT_3 <= 10

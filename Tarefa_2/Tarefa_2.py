@@ -72,10 +72,12 @@ for dc in dcList:
 for ptt in pttList:
     prob += lpSum([variaveisX[dc][ptt]*trafegoDCs[dc] for dc in dcList]) <= capPtts[ptt],"Capacidade_%s"%ptt
 
-#Restrições dos tráfegos dos DCs
-# for dc in dcList:
-#     prob += lpSum([variaveisX[dc][ptt] for ptt in pttList]) == trafegoDCs[dc],"Trafego_%s"%dc
-
+#Restrição do custo total
+var_aux = ""
+for (dc,ptt) in tuplasDCPTT:
+    var_aux += lpSum(custos[dc][ptt]*variaveisX[dc][ptt] + variaveisY[ptt]*custoAtivacaoPtts[ptt])
+    # prob += lpSum(custos[dc][ptt]*variaveisX[dc][ptt] + variaveisY[ptt]*custoAtivacaoPtts[ptt]) <= H,"restricoes_valor_total_%s_%s"%(dc,ptt)
+prob += var_aux <= H,"restricao_valor_total"
 #Demais comandos!
 prob.writeLP("Minimizar_Atraso_Max_DCs_PPTs.lp")
 prob.solve()
@@ -86,12 +88,6 @@ for v in prob.variables():
 
 print("O menor somatório dos atrasos eh = ", value(prob.objective))
 
-# custo_infra = 0
-# for ptt in pttList:
-#     custo_infra += lpSum([variaveisX[dc][ptt]*trafegoDCs[dc]*custos[dc][ptt] for dc in dcList])
-#     custo_infra += lpSum([variaveisX[dc][ptt]*custoAtivacaoPtts[ptt] for dc in dcList])
-
-# print("O custo total da infraestrutura eh= %d", custo_infra)
 
 
 
